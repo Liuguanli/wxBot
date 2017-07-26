@@ -16,7 +16,7 @@ import ssl
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-coins = ['btc','rep','dash','exc','nmc','shell','xcp','xtc','ltc','etp','bts','bat','eth','ftc','nxt','tips','xmr','xem','zec','xrp','qtum','btrx','cnc','snt','btm','ico','eos','doge','etc','ifc','ppc','tix','xpm','ans','dgd','zmc','1st','gxs','gnt','obs','omg','bnt','cdt','wings','mgo']
+coins = ['btc','rep','dash','exc','nmc','shell','xcp','xtc','ltc','etp','bts','bat','eth','ftc','nxt','tips','xmr','xem','zec','xrp','qtum','btrx','cnc','snt','btm','ico','eos','doge','etc','ifc','ppc','tix','xpm','ans','dgd','zmc','1st','gxs','gnt','obs','omg','bnt','cdt','wings','mgo','sc']
 
 
 class MyWXBot(WXBot):
@@ -244,15 +244,19 @@ class MyWXBot(WXBot):
                 self.send_msg_by_uid(u"范范好 "+u"\U0001F339" + self.handle_at_me(msg), msg['user']['id'])
             else:
                 self.send_msg_by_uid(u"范范好 "+u"\U0001F339", msg['user']['id'])
+            self.handle_coin(msg)
+        elif msg['content']['user']['name'] == 'Nine':
+            if self.is_at_me(msg):
+                self.send_msg_by_uid(unicode(self.handle_at_me(msg)), msg['user']['id'])
         else:
             if self.is_at_me(msg):
                 self.send_msg_by_uid(unicode(self.handle_at_me(msg)), msg['user']['id'])
-        self.handle_coin(msg)
+            self.handle_coin(msg)
 
     def handle_msg_all(self, msg):
         if msg['msg_type_id'] == 4:
-            print msg
-            self.handle_fanfan_case(msg)    
+            self.handle_fanfan_case(msg)
+            self.handle_coin(msg)
         elif msg['msg_type_id'] == 3:
             if msg['content']['type'] == 0:
                 self.handle_group_case(msg)
