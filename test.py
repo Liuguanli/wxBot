@@ -181,7 +181,7 @@ class MyWXBot(WXBot):
         if bter != -1:
             hasResult = True
             result += "------------\n"
-            result += "比特儿 ￥%s" % (bter)
+            result += "比特儿 ￥%s" % (bter) +"\n"
         if b8wang != -1:
             hasResult = True
             result += "------------\n"
