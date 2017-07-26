@@ -16,7 +16,7 @@ import ssl
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-coins = ['btc','rep','dash','exc','nmc','shell','xcp','xtc','ltc','etp','bts','bat','eth','ftc','nxt','tips','xmr','xem','zec','xrp','qtum','btrx','cnc','snt','btm','ico','eos','doge','etc','ifc','ppc','tix','xpm','ans','dgd','zmc','1st','gxs','gnt','obs','omg']
+coins = ['btc','rep','dash','exc','nmc','shell','xcp','xtc','ltc','etp','bts','bat','eth','ftc','nxt','tips','xmr','xem','zec','xrp','qtum','btrx','cnc','snt','btm','ico','eos','doge','etc','ifc','ppc','tix','xpm','ans','dgd','zmc','1st','gxs','gnt','obs','omg','bnt','cdt','wings','mgo']
 
 
 class MyWXBot(WXBot):
